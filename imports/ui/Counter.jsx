@@ -5,9 +5,6 @@ import Button from '@material-ui/core/Button';
 
 function Counter(props) {
   const [counter, setCounter] = useState(0)
-  // const [todos, setTodo] = useState(
-  console.log(props.todos);
-  // )
   return (
     <div>
       <Button onClick={() => setCounter(counter + 1)} variant="contained">
