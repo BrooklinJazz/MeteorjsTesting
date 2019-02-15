@@ -1,11 +1,11 @@
 import React from 'react';
-import Hello from './Hello.jsx';
+import Counter from './Counter.jsx';
 import Info from './Info.jsx';
 
 const App = () => (
   <div>
     <h1>Welcome to Meteor!</h1>
-    <Hello />
+    <Counter />
     <Info />
   </div>
 );
