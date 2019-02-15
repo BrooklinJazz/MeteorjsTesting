@@ -1,8 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import Links from '/imports/api/links';
+import Todos from '/imports/api/todos';
 
 function insertLink(title, url) {
   Links.insert({ title, url, createdAt: new Date() });
+}
+
+function insertTodo(title, completed = false) {
+  Todos.insert({ title, completed: completed, createdAt: new Date() });
 }
 
 Meteor.startup(() => {
@@ -26,6 +31,16 @@ Meteor.startup(() => {
     insertLink(
       'Discussions',
       'https://forums.meteor.com'
+    );
+  }
+
+  if (Todos.find().count() === 0) {
+    insertTodo(
+      'Example Todo',
+    );
+    insertTodo(
+      'Example Todo Completed',
+      true
     );
   }
 });
