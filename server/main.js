@@ -3,7 +3,7 @@ import Todos from '/imports/api/todos';
 
 
 function insertTodo(title, completed = false) {
-  Todos.insert({ title, completed: completed, createdAt: new Date() });
+  Todos.insert({ title, completed: completed});
 }
 
 Meteor.startup(() => {
